@@ -6,8 +6,8 @@ extend-exclude = '''
 # A regex preceded with ^/ will apply only to files and directories
 # in the root of the project.
 ^/venv/
-# Exclude all ANTLR-generated files in frontend directories, handling nested structures
-(?:frontend|ufc/frontend)/.*?(?:parser|_antlr)(?:/[^/]+)*?/[^/]*?(?:Parser|Lexer|Visitor|Listener)(?:Base)?\.py$
+# Exclude ANTLR-generated files in frontend directories (both root and ufc)
+(?:^|^ufc/)frontend/[^/]+/(?:parser|_antlr)(?:/[^/]+)*?/[^/]*?(?:Parser|Lexer|Visitor|Listener)(?:Base)?\.py$
 # Exclude test files that interact with ANTLR-generated code
 (?:tests|ufc/tests)/.*?\.py$
 '''
