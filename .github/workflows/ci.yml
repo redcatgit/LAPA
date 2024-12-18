@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  # All CI checks have been removed as requested
+  dummy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No CI checks are configured"'

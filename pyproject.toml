@@ -1,0 +1,37 @@
+[tool.black]
+line-length = 100
+target-version = ['py312']
+include = '\.pyi?$'
+extend-exclude = '''
+# A regex preceded with ^/ will apply only to files and directories
+# in the root of the project.
+^/venv/
+# Exclude ANTLR-generated files in direct parser directories
+(?:^|^ufc/)frontend/[^/]+/parser/[^/]*?(?:Parser|Lexer|Visitor|Listener)(?:Base)?\.py$
+# Exclude ANTLR-generated files in nested _antlr directories
+(?:^|^ufc/)frontend/[^/]+/parser/frontend/[^/]+/_antlr/[^/]*?(?:Parser|Lexer|Visitor|Listener)(?:Base)?\.py$
+# Exclude test files that interact with ANTLR-generated code
+(?:tests|ufc/tests)/.*?\.py$
+'''
+
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[tool.pytest]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[project]
+name = "ufc"
+version = "0.1.0"
+description = "Universal Frontend Compiler for LAPA"
+requires-python = ">=3.12"
+dependencies = [
+    "antlr4-python3-runtime>=4.13.1",
+    "pytest>=7.4.3",
+    "black>=23.11.0",
+    "click>=8.1.7",
+]
