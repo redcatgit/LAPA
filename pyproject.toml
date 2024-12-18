@@ -9,7 +9,7 @@ extend-exclude = '''
 # Exclude all ANTLR-generated files
 (?:frontend|ufc/frontend)/.*?(?:(?:Parser|Lexer|Visitor|Listener)(?:Base)?|Base)\.py$
 # Exclude test files that interact with ANTLR-generated code
-^tests/test_.*?\.py$
+(?:tests|ufc/tests)/.*?\.py$
 '''
 
 [build-system]
