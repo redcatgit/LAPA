@@ -7,7 +7,7 @@ extend-exclude = '''
 # in the root of the project.
 ^/venv/
 # Exclude all ANTLR-generated files
-(?:ufc/)?frontend/[^/]+/(?:(?:parser|_antlr)/|parser/frontend/[^/]+/_antlr/).*?(?:C|CPP14|Java9)(?:Parser|Lexer|Visitor|Listener|Base)\.py$
+(?:(?:ufc/)?frontend/[^/]+/(?:parser|_antlr)|(?:ufc/)?frontend/[^/]+/parser/frontend/[^/]+/_antlr)/.*?(?:C|CPP14|Java9)(?:Parser|Lexer|Visitor|Listener|Base)\.py$
 '''
 
 [build-system]
