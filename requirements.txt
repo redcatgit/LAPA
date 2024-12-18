@@ -1,0 +1,4 @@
+antlr4-python3-runtime>=4.13.1
+pytest>=7.4.3
+black>=23.11.0
+click>=8.1.7
